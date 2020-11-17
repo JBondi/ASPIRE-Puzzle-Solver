@@ -15,5 +15,6 @@ class IOTests<MyAssertTrueTest> {
 		InputStream in = new FileInputStream("README.md");
 		Assertions.assertTrue(true);
 		String s = IOUtils.toString(in, "UTF-8");
+		Assertions.assertFalse(s.isEmpty());
 	}
 }
