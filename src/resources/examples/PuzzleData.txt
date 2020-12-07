@@ -1,0 +1,3 @@
+Name: Hannah, James, Xavier, Wolfgang
+House Color: Red, Green, Black, Blue 
+Pet: Cat, Dog, Marmot, Fish
