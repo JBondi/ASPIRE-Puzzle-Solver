@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class BasicJava {
@@ -50,6 +51,41 @@ class BasicJava {
 			test();
 		}
 
+		@Test
+		public void arrays() {
+			
+			//Create an array of 10 numbers
+			int[] arrayOfNumbers = new int[10];
+			
+			//fill it using a for-loop
+			for(int i = 0; i < arrayOfNumbers.length; i++) {
+				arrayOfNumbers[i] = i * 2;
+			}
+			
+			//Now, arrayOfNumbers is [0,2,4,6,8,10,12,14,16,18]
+			
+			Assertions.assertArrayEquals(arrayOfNumbers, new int[] {0,2,4,6,8,10,12,14,16,18});
+			
+			//Let's change the array so that each number is one less 
+			for(int i = 0; i < arrayOfNumbers.length; i++) {
+				arrayOfNumbers[i] = arrayOfNumbers[i] - 1;
+			}
+			//Now, arrayOfNumbers is [-1,1,3,5,7,9,11,13,15,17]
+			
+			Assertions.assertArrayEquals(arrayOfNumbers, new int[] {-1,1,3,5,7,9,11,13,15,17});
+		}
+		
+		@Test
+		public void stringStuff() {
+			
+			//These two variables are the same, except that one has a lot of extra
+			//spaces so we use the method "trim()" to get rid of them.
+			String wordWithExtraSpaces = "    Word  ";
+			String wordWithoutExtraSpaces = "Word";
+			String changedWord = wordWithExtraSpaces.trim();
+			Assertions.assertEquals(wordWithoutExtraSpaces, changedWord);
+			
+		}
 	}
 
 
