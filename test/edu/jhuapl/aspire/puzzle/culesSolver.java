@@ -68,5 +68,6 @@ public class culesSolver {
 		}//end of while loop
 		System.out.println(allData);
 		System.out.println(allData.get("Pet")[1]);
+		
 	}
 }

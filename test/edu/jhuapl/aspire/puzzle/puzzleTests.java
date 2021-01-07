@@ -53,5 +53,8 @@ public class puzzleTests {
 		petData.put("Pets", pets); 
 		System.out.println(Arrays.toString(petData.get("Pets")));
 	}
+	
+	//trim
+	
 
 	}

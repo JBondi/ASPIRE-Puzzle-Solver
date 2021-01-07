@@ -4,14 +4,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import com.sun.source.util.DocTreeScanner;
 
 class BasicJava {
 	
 	private static final int SIZE = 4;
 	private static String ExceptionMessage = "Exception Message";
+	private int min;
 	
 	private void test() throws IOException{
 	    try {
@@ -46,10 +50,6 @@ class BasicJava {
 	    	System.out.println(fp.canRead());
 	    }
 		
-		@Test
-		public void test2() throws IOException{
-			test();
-		}
 
 		@Test
 		public void arrays() {
@@ -85,6 +85,29 @@ class BasicJava {
 			String changedWord = wordWithExtraSpaces.trim();
 			Assertions.assertEquals(wordWithoutExtraSpaces, changedWord);
 			
+		}
+		
+		@Test
+		public void arrayTrim(){
+			int[] size = new int [] {10,4,15,213,5};
+
+			min = size[0];
+
+			String result = "             "; 
+
+			for(int i = 0; i < size.length; i++){
+			    result += size[i] +  " "; 
+			}
+			System.out.println(result.trim());
+			System.out.println(result);
+		}
+		
+		@Test
+		public void arrayTrim2() {
+			String[] ravens = new String[] {" Hannah likes ice cream ", " I like to ride my bike ", " The ravens went to the playoffs "};
+			for(int i = 0; i< ravens.length; i++) {
+				System.out.println(ravens[i].trim());
+			}
 		}
 	}
 
