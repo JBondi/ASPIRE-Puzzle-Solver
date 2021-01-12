@@ -63,8 +63,12 @@ public class culesSolver {
 			String[] splitLine = line.split(":");
 			System.out.println("Name of data: " + splitLine[0]);
 			String[] dataPoints1 = splitLine[1].split(",");
-			System.out.println(Arrays.toString(dataPoints1));
-			allData.put(splitLine[0], dataPoints1);
+			String[] dataPoints2= new String[dataPoints1.length];
+			for (int i= 0; i< dataPoints2.length; i++) {
+				dataPoints2[i]= dataPoints1[i].trim();
+			}
+			System.out.println(Arrays.toString(dataPoints2));
+			allData.put(splitLine[0], dataPoints2);
 		}//end of while loop
 		System.out.println(allData);
 		System.out.println(allData.get("Pet")[1]);
