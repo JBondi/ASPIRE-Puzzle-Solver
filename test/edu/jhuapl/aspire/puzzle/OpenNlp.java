@@ -1,14 +1,21 @@
 package edu.jhuapl.aspire.puzzle;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import opennlp.tools.cmdline.parser.ParserTool;
+import opennlp.tools.parser.Parse;
+import opennlp.tools.parser.Parser;
+import opennlp.tools.parser.ParserFactory;
+import opennlp.tools.parser.ParserModel;
 import opennlp.tools.tokenize.*;
 
 public class OpenNlp {
@@ -20,9 +27,25 @@ public class OpenNlp {
 		tokenizer.tokenize("Hanna lives in the red house.");
 		String[] tokens;
 		tokens = tokenizer.tokenize("Hanna lives in the red house.");
+		ArrayList<String> list = new ArrayList<>();
+		Arrays.asList(tokens);
 		Assertions.assertEquals(tokens.length, 7);
 		System.out.println(Arrays.toString(tokens));
 		StringTokenizer tokenizer2 = new StringTokenizer("Hanna lives in the red house.");
 		System.out.println(tokenizer2.countTokens());
+	}
+	
+	@Test
+	public void parser() throws Exception{
+		ParserModel model = new ParserModel(new File("src/resources/models/en-parser-chunking.bin"));
+		Parser parser = ParserFactory.create(model);
+		Parse[] parsedSentence = ParserTool.parseLine("Hanna lives in the red house", parser, 1);
+		Parse parse = parsedSentence[0];
+		parseChild(parse);
+	}
+	
+	private void parseChild(Parse child) {
+		for(Parse newChild : child.getChildren())
+			parseChild(newChild);
 	}
 }
