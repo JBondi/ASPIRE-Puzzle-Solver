@@ -6,7 +6,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 import org.junit.jupiter.api.Assertions;
@@ -38,12 +41,13 @@ public class OpenNlp {
 	
 	@Test
 	public void parser() throws Exception{
+		Map<String, String[]> allData = puzzleData();
 		ParserModel model = new ParserModel(new File("src/resources/models/en-parser-chunking.bin"));
 		Parser parser = ParserFactory.create(model);
-		Parse[] parsedSentence = ParserTool.parseLine("The dog owner is living next to the black house", parser, 1);
+		Parse[] parsedSentence = ParserTool.parseLine("Hannah lives in the red house", parser, 1);
 		Parse parse = parsedSentence[0];
 		List<String> list = parseChild(parse);
-		System.out.println(list);
+		System.out.println(list + " This was the list of nouns");
 	}
 	
 	private List<String> parseChild(Parse child) {
@@ -51,14 +55,36 @@ public class OpenNlp {
 		if(child.getChildCount() > 0 
 				&&
 				child.getChildren()[0].getType().equals("TK")) {
-			if(child.getChildCount() > 0 && (child.getChildren()[0].getType().equals("NNP"))||
-					child.getChildren()[0].getType().equals("NN")|| 
-					child.getChildren()[0].getType().equals("JJ"))
+			if(child.getChildCount() > 0 && (child.getType().equals("NNP"))||
+					child.getType().equals("NN")|| 
+					child.getType().equals("JJ"))
 				list.add(child.getCoveredText());
 		}
 		child.show();
 		for(Parse newChild : child.getChildren())
-			list.addAll(parseChild(newChild));
+			list.addAll(
+					parseChild(newChild));
 		return list;
+	}
+	
+	private Map<String, String[]> puzzleData() throws IOException {
+		FileInputStream stream = new FileInputStream("src/resources/examples/PuzzleData.txt");
+		Scanner scanner = new java.util.Scanner(stream);
+		Map<String, String[]> allData = new HashMap<>();
+		while(scanner.hasNextLine()) {
+			String line= scanner.nextLine();
+			String[] splitLine = line.split(":");
+			System.out.println("Name of data: " + splitLine[0]);
+			String[] dataPoints1 = splitLine[1].split(",");
+			String[] dataPoints2= new String[dataPoints1.length];
+			for (int i= 0; i< dataPoints2.length; i++) {
+				dataPoints2[i]= dataPoints1[i].trim();
+			}
+			System.out.println(Arrays.toString(dataPoints2));
+			allData.put(splitLine[0], dataPoints2);
+		}//end of while loop
+		System.out.println(allData);
+		System.out.println(allData.get("Pet")[1]);
+		return allData;
 	}
 }
