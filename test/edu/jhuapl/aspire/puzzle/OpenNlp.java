@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.StringTokenizer;
 
 import org.junit.jupiter.api.Assertions;
@@ -41,18 +42,23 @@ public class OpenNlp {
 		Parser parser = ParserFactory.create(model);
 		Parse[] parsedSentence = ParserTool.parseLine("The dog owner is living next to the black house", parser, 1);
 		Parse parse = parsedSentence[0];
-		parseChild(parse);
+		List<String> list = parseChild(parse);
+		System.out.println(list);
 	}
 	
-	private void parseChild(Parse child) {
+	private List<String> parseChild(Parse child) {
+		List<String> list = new ArrayList<>();
+		if(child.getChildCount() > 0 
+				&&
+				child.getChildren()[0].getType().equals("TK")) {
+			if(child.getChildCount() > 0 && (child.getChildren()[0].getType().equals("NNP"))||
+					child.getChildren()[0].getType().equals("NN")|| 
+					child.getChildren()[0].getType().equals("JJ"))
+				list.add(child.getCoveredText());
+		}
 		child.show();
 		for(Parse newChild : child.getChildren())
-			parseChild(newChild);
-        if(child.getChildCount() > 0 && child.getChildren()[0].getType().equals("NNP"))
-            list.add(child.getCoveredText());
-        if(child.getChildCount() > 0 && child.getChildren()[0].getType().equals("NN"))
-            list.add(child.getCoveredText());
-        if(child.getChildCount() > 0 && child.getChildren()[0].getType().equals("JJ"))
-            list.add(child.getCoveredText());
+			list.addAll(parseChild(newChild));
+		return list;
 	}
 }
