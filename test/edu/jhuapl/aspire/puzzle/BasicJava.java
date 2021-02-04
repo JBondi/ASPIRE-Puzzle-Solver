@@ -4,12 +4,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import com.sun.source.util.DocTreeScanner;
 
 class BasicJava {
 	
@@ -109,8 +107,43 @@ class BasicJava {
 				System.out.println(ravens[i].trim());
 			}
 		}
-	}
+		
+		@Test
+		public void Lists() {
+			ArrayList<Integer> arlist = new ArrayList();
+			for (int i= 1 ; i<= 10; i++) {
+				arlist.add(i);
+			}
+			arlist.add(11);
+			System.out.println(arlist.get(5));
+		}
+		
+		private int factorial(int number) {
+			if (number <= 1) {
+				return 1;
+			}
+			return number *(factorial (number-1));
+		}
+		
+		@Test
+		public void factorialTest() {
+			int f = factorial(6);
+			System.out.println(f);
+		}
+		
+		public void Recursion(int times) {
+			if (times<5) {
+				System.out.println(times);
+			}
+			else {
+				System.out.println(times);
+				Recursion(times-1);
+			}
+		}
+		
+		@Test
+		public void  recursionTests(){
+			Recursion(10);
+}
 
-
-
-
+		}

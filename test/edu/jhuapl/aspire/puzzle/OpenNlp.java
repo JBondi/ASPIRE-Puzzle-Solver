@@ -39,13 +39,20 @@ public class OpenNlp {
 	public void parser() throws Exception{
 		ParserModel model = new ParserModel(new File("src/resources/models/en-parser-chunking.bin"));
 		Parser parser = ParserFactory.create(model);
-		Parse[] parsedSentence = ParserTool.parseLine("Hanna lives in the red house", parser, 1);
+		Parse[] parsedSentence = ParserTool.parseLine("The dog owner is living next to the black house", parser, 1);
 		Parse parse = parsedSentence[0];
 		parseChild(parse);
 	}
 	
 	private void parseChild(Parse child) {
+		child.show();
 		for(Parse newChild : child.getChildren())
 			parseChild(newChild);
+        if(child.getChildCount() > 0 && child.getChildren()[0].getType().equals("NNP"))
+            list.add(child.getCoveredText());
+        if(child.getChildCount() > 0 && child.getChildren()[0].getType().equals("NN"))
+            list.add(child.getCoveredText());
+        if(child.getChildCount() > 0 && child.getChildren()[0].getType().equals("JJ"))
+            list.add(child.getCoveredText());
 	}
 }
