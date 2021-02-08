@@ -48,6 +48,12 @@ public class OpenNlp {
 		Parse parse = parsedSentence[0];
 		List<String> list = parseChild(parse);
 		System.out.println(list + " This was the list of nouns");
+		for(String key : allData.keySet()) {
+			String[] values = allData.get(key);
+			for(String value : values) {
+				
+			}
+		}
 	}
 	
 	private List<String> parseChild(Parse child) {
