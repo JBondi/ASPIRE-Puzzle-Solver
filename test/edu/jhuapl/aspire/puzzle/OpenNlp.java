@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,20 +41,36 @@ public class OpenNlp {
 	}
 	
 	@Test
-	public void parser() throws Exception{
+	public void parser2() throws Exception {
+		FileInputStream stream = new FileInputStream("src/resources/examples/PuzzleClues.txt");
+		Scanner scanner = new java.util.Scanner(stream);
 		Map<String, String[]> allData = puzzleData();
 		ParserModel model = new ParserModel(new File("src/resources/models/en-parser-chunking.bin"));
+		while(scanner.hasNextLine()) {
+			String line= scanner.nextLine();
+			parser(line, model, allData);
+		}
+	}
+	
+	private List<String> parser(String sentence, ParserModel model, Map<String, String[]> allData) throws Exception{
+		List<String> puzzleNouns= new ArrayList<>();
 		Parser parser = ParserFactory.create(model);
-		Parse[] parsedSentence = ParserTool.parseLine("Hannah lives in the red house", parser, 1);
+		Parse[] parsedSentence = ParserTool.parseLine(sentence, parser, 1);
 		Parse parse = parsedSentence[0];
-		List<String> list = parseChild(parse);
-		System.out.println(list + " This was the list of nouns");
+		List<String> nounInSentence = parseChild(parse);
+		System.out.println(nounInSentence + " This was the list of nouns");
 		for(String key : allData.keySet()) {
 			String[] values = allData.get(key);
 			for(String value : values) {
-				
-			}
+				for(String noun: nounInSentence){
+					if(noun.equalsIgnoreCase(value)) {
+						puzzleNouns.add(noun);
+					}
+				}
+				}
 		}
+		System.out.println(puzzleNouns);
+		return puzzleNouns;
 	}
 	
 	private List<String> parseChild(Parse child) {
@@ -66,7 +83,6 @@ public class OpenNlp {
 					child.getType().equals("JJ"))
 				list.add(child.getCoveredText());
 		}
-		child.show();
 		for(Parse newChild : child.getChildren())
 			list.addAll(
 					parseChild(newChild));
