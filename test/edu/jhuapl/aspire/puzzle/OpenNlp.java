@@ -51,6 +51,7 @@ public class OpenNlp {
 		for(String key : allData.keySet()) {
 			String[] values = allData.get(key);
 			for(String value : values) {
+					
 				
 			}
 		}
