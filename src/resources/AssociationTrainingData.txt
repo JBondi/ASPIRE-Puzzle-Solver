@@ -1,100 +1,122 @@
-1: The Norwegian lives in the Blue house.
-0: The Spanish lives directly to the right of the Red house.
-1: The Italian lives in house two.
-1: At the fourth position is the girl drinking Strawberry juice.
-1: The girl drinking Strawberry juice is somewhere between the girl who likes Art and the girl that is drinking Apple juice, in that order.
-0: Riley is next to the girl who likes the Roman civilization.
-1: The girl wearing the Green shirt is drinking Apple juice.
-1: At the fourth position is the girl that is interested in Religion.
-0: The 12 years old girl is exactly to the right of the 11 years old girl.
-0: At one of the ends is the girl who likes the Egyptian civilization.
-1: The girl wearing the Black shirt is somewhere between the girl that likes Science and the girl wearing the Red shirt, in that order.
-0: The girl wearing the Red shirt is somewhere to the left of the girl wearing the White shirt.
-1: The girl drinking Cranberry juice likes the Greek civilization.
-1: Ella is at the third position.
-0: The 12 years old girl is next to the girl that is interested in Architecture.
-0: Riley is exactly to the right of the girl that admires the Roman civilization.
-1: The girl drinking Cranberry juice is somewhere between the 13 years old girl and the girl drinking Grapefruit juice, in that order.
-0: At one of the ends is the girl that likes Science.
-0: At one of the ends is the girl who loves Architecture.
-0: Lily is exactly to the right of the girl who likes Economy.
-1: Makayla is 10.
-0: The girl interested in the Aztec civilization is somewhere between the girl interested in the Roman civilization and the girl interested in the Chinese civilization, in that order0: The youngest girl is at one of the ends.
-1: The second position is the girl that likes Art.
-1: The investor who lives in San Francisco is somewhere between the investor who invested $5 million last month and the investor who lives in Los Angeles, in that order.
-1: At the fourth position is the investor interested in Healthcare companies.
-1: The investor who invested $3 million last month is somewhere between the investor wearing the Red tie and the investor who invested $2 million last month, in that order.
-1: At the fifth position is the investor interested in Internet companies.
-0: The investor wearing the Red tie is somewhere to the left of the investor interested in Healthcare companies.
-0: The investor that lives in Miami is next to the investor interested in Clean tech companies.
-1: The investor wearing the Red tie is somewhere between the investor who invested $5 million last month and the investor wearing the Black tie, in that order.
-0: At one of the ends is the investor who did a $4 million investment last month.
-0: Matt is next to the 45-year-old man.
-0: Pierre is somewhere to the right of the investor wearing the Blue tie.
-0: The 40-year-old man is next to the investor interested in Healthcare companies.
-1: The man wearing the Red tie is somewhere between the man wearing the Green tie and the youngest man, in that order.
-0: The investor wearing the Red tie is next to the investor who lives in Atlanta.
-0: Dave is exactly to the left of the 30-year-old man.
-0: The investor interested in Biotech companies is next to the investor who lives in Atlanta.
-1: The 35-year-old man is somewhere between Adam and the investor interested in Software companies, in that order.
-0: The 45-year-old investor is exactly to the right of the investor that invested $2 million last month.
-1: The investor wearing the blue tie is interested in Software companies.
-0: The 40-year-old man is next to the man wearing the Purple tie.
-1: At the first position is the investor who lives in New York.
-1: Dane is at the fourth chair.
-0: The customer talking about Economy is exactly to the left of the customer talking about Cars.
-0: The Musician is next to the man using the Black cape.
-0: Randy is next to Dane.
-0: The oldest man is exactly to the right of the man talking about Economy.
-1: The Salesman is either at the first or at the last chair.
-0: The customer who wants the Chinstrap beard is exactly to the left of Dane.
-1: The man using the Blue cape is somewhere between the man talking about Economy and Dane, in that order.
-1: The Accountant is at one of the ends.
-1: At the fifth chair is the customer talking about Religion.
-1: The man using the Red cape is talking about Religion.
-0: The Teacher is exactly to the right of the Salesman.
-0: Simon is next to the man using the Blue cape.
-0: The Teacher is exactly to the right of the 35-year-old customer.
-0: The customer that wants the Van dyke beard is exactly to the left of the 45-year-old man.
-1: Martin is somewhere between the man that wants the Van dyke beard and the man talking about Politics, in that order.
-0: The youngest costumer is next to the man talking about Sports.
-1: Simon is at one of the ends.
-0: The man using the White cape is next to the Accountant.
-1: At the fifth chair is the customer that wants the Anchor beard.
-1: The man who wants the Mutton chops is somewhere between the man that wants the Chinstrap and the man that will get the Anchor beard, in that order.
-0: The woman drinking Grape juice is next to the woman using the Green towel.
-1: The Chef is somewhere between the Pilot and the woman drinking Orange juice, in that order.
-0: The Translator is next to the woman eating the Bacon sandwich.
-0: The 30-year-old woman is exactly to the left of the woman drinking Grape juice.
-0: Michaela is next to the woman using the Yellow towel.
-0: The 40-year-old woman is exactly to the right of the 35-year-old woman.
-0: The Chef is exactly to the right of the woman drinking Apple juice.
-1: The woman using the Yellow towel is somewhere between the 30-year-old woman and the woman eating the Pork sandwich, in that order.
-1: Michaela is drinking Mango juice.
-1: At one of the ends is the 40-year-old woman.
-0: The Engineer is exactly to the left of the 35-year-old woman.
-0: Eliana is next to the Translator.
-1: The woman eating the Ham sandwich is somewhere between Yasmin and the woman eating the Bacon sandwich, in that order.
-1: The woman using the Red towel is eating the Cheese sandwich.
-1: At the first position is the woman using the White towel.
-1: The woman using the Yellow towel is somewhere between the 30-year-old woman and the woman using the Green towel, in that order.
-0: Eliana is exactly to the right of the woman drinking Orange juice.
-0: The woman using the Yellow towel is somewhere to the left of Lydia.
-1: The oldest woman is an Engineer.
-1: At one of the ends is the woman eating the Pork sandwich.
-1: Michaela works as an Engineer.
-1: Angela is 45 years old.
-1: The Dentist started Singing during the Covid-19 pandemic.
-1: At the third position is the woman who loves Coffee.
-0: The Model is somewhere to the right of the woman wearing the Green mask.
-1: The woman who loves Orange juice is next to the woman that started Singing during the Covid-19 pandemic.
-0: The 40-year-old woman is exactly to the left of the 35-year-old woman.
-0: The woman wearing the Green mask is somewhere to the left of the woman whose favorite drink is Hot chocolate.
-0: The Plumber is exactly to the left of the youngest woman.
-1: At the third position is the woman who started Reading during the Covid-19 pandemic.
-0: The woman that started Cooking during the pandemic is exactly to the right of the woman wearing the Orange mask.
-0: Renee is next to the woman who started Reading a lot in 2020.
-1: The 40-year-old-woman is somewhere between the the woman that loves Soft drink and the 35-year-old woman, in that order.
-0: The Architect is exactly to the left of the woman that started Woodworking.
-0: Angela is next to the woman wearing the Blue mask.
-0: Holly is exactly to the right of the oldest woman.
+1    The Norwegian lives in the Blue house.
+0    The Spanish lives directly to the right of the Red house.
+0    The Italian does not lives in house two.
+1    Andy owns a a farm. 
+1    At the fourth position is the girl drinking Strawberry juice.
+1    The girl drinking Strawberry juice is somewhere between the girl who likes Art and the girl that is drinking Apple juice, in that order.
+0    Riley is next to the girl who likes the Roman civilization.
+1    The girl wearing the Green shirt is drinking Apple juice.
+1    At the fourth position is the girl that is interested in Religion.
+0    The 12 years old girl is exactly to the right of the 11 years old girl.
+0    At one of the ends is the girl who likes the Egyptian civilization.
+1    The girl wearing the Black shirt is somewhere between the girl that likes Science and the girl wearing the Red shirt, in that order.
+0    The girl wearing the Red shirt is somewhere to the left of the girl wearing the White shirt.
+1    The girl drinking Cranberry juice likes the Greek civilization.
+1    Ella is at the third position.
+0    The 12 years old girl is next to the girl that is interested in Architecture.
+0    Riley is exactly to the right of the girl that admires the Roman civilization.
+1    The girl drinking Cranberry juice is somewhere between the 13 years old girl and the girl drinking Grapefruit juice, in that order.
+0    At one of the ends is the girl that likes Science.
+0    At one of the ends is the girl who loves Architecture.
+0    Lily is exactly to the right of the girl who likes Economy.
+1    Makayla is 10.
+0    The girl interested in the Aztec civilization is somewhere between the girl interested in the Roman civilization and the girl interested in the Chinese civilization, in that order0    The youngest girl is at one of the ends.
+1    The second position is the girl that likes Art.
+1    The investor who lives in San Francisco is somewhere between the investor who invested $5 million last month and the investor who lives in Los Angeles, in that order.
+1    At the fourth position is the investor interested in Healthcare companies.
+1    The investor who invested $3 million last month is somewhere between the investor wearing the Red tie and the investor who invested $2 million last month, in that order.
+1    At the fifth position is the investor interested in Internet companies.
+0    The investor wearing the Red tie is somewhere to the left of the investor interested in Healthcare companies.
+0    The investor that lives in Miami is next to the investor interested in Clean tech companies.
+1    The investor wearing the Red tie is somewhere between the investor who invested $5 million last month and the investor wearing the Black tie, in that order.
+0    At one of the ends is the investor who did a $4 million investment last month.
+0    Matt is next to the 45-year-old man.
+0    Pierre is somewhere to the right of the investor wearing the Blue tie.
+0    The 40-year-old man is next to the investor interested in Healthcare companies.
+1    The man wearing the Red tie is somewhere between the man wearing the Green tie and the youngest man, in that order.
+0    The investor wearing the Red tie is next to the investor who lives in Atlanta.
+0    Dave is exactly to the left of the 30-year-old man.
+0    The investor interested in Biotech companies is next to the investor who lives in Atlanta.
+1    The 35-year-old man is somewhere between Adam and the investor interested in Software companies, in that order.
+0    The 45-year-old investor is exactly to the right of the investor that invested $2 million last month.
+1    The investor wearing the blue tie is interested in Software companies.
+0    The 40-year-old man is next to the man wearing the Purple tie.
+1    At the first position is the investor who lives in New York.
+1    Dane is at the fourth chair.
+0    The customer talking about Economy is exactly to the left of the customer talking about Cars.
+0    The Musician is next to the man using the Black cape.
+0    Randy is next to Dane.
+1    Randy owns a frog
+0    The oldest man is exactly to the right of the man talking about Economy.
+1    The Salesman is either at the first or at the last chair.
+1    Mr.White owns a dog
+0    The customer who wants the Chinstrap beard is exactly to the left of Dane.
+1    The man using the Blue cape is somewhere between the man talking about Economy and Dane, in that order.
+1    The Accountant is at one of the ends.
+1    At the fifth chair is the customer talking about Religion.
+1    The man using the Red cape is talking about Religion.
+0    The Teacher is exactly to the right of the Salesman.
+0    Simon is next to the man using the Blue cape.
+0    The Teacher is exactly to the right of the 35-year-old customer.
+0    The customer that wants the Van dyke beard is exactly to the left of the 45-year-old man.
+1    Martin is somewhere between the man that wants the Van dyke beard and the man talking about Politics, in that order.
+0    The youngest costumer is next to the man talking about Sports.
+1    Simon is at one of the ends.
+0    The man using the White cape is next to the Accountant.
+1    At the fifth chair is the customer that wants the Anchor beard.
+1    The man who wants the Mutton chops is somewhere between the man that wants the Chinstrap and the man that will get the Anchor beard, in that order.
+0    The woman drinking Grape juice is next to the woman using the Green towel.
+1    The Chef is somewhere between the Pilot and the woman drinking Orange juice, in that order.
+0    The Translator is next to the woman eating the Bacon sandwich.
+0    The 30-year-old woman is exactly to the left of the woman drinking Grape juice.
+0    Michaela is next to the woman using the Yellow towel.
+0    The 40-year-old woman is exactly to the right of the 35-year-old woman.
+0    The Chef is exactly to the right of the woman drinking Apple juice.
+1    The woman using the Yellow towel is somewhere between the 30-year-old woman and the woman eating the Pork sandwich, in that order.
+1    Michaela is drinking Mango juice.
+1    At one of the ends is the 40-year-old woman.
+0    The Engineer is exactly to the left of the 35-year-old woman.
+0    Eliana is next to the Translator.
+1    The woman eating the Ham sandwich is somewhere between Yasmin and the woman eating the Bacon sandwich, in that order.
+1    The woman using the Red towel is eating the Cheese sandwich.
+1    At the first position is the woman using the White towel.
+1    The woman using the Yellow towel is somewhere between the 30-year-old woman and the woman using the Green towel, in that order.
+0    Eliana is exactly to the right of the woman drinking Orange juice.
+0    The woman using the Yellow towel is somewhere to the left of Lydia.
+1    The oldest woman is an Engineer.
+1    At one of the ends is the woman eating the Pork sandwich.
+1    Michaela works as an Engineer.
+1    Angela is 45 years old.
+1    The Dentist started Singing during the Covid-19 pandemic.
+1    At the third position is the woman who loves Coffee.
+0    The Model is somewhere to the right of the woman wearing the Green mask.
+1    The woman who loves Orange juice is next to the woman that started Singing during the Covid-19 pandemic.
+0    The 40-year-old woman is exactly to the left of the 35-year-old woman.
+0    The woman wearing the Green mask is somewhere to the left of the woman whose favorite drink is Hot chocolate.
+0    The Plumber is exactly to the left of the youngest woman.
+1    At the third position is the woman who started Reading during the Covid-19 pandemic.
+0    The woman that started Cooking during the pandemic is exactly to the right of the woman wearing the Orange mask.
+0    Renee is next to the woman who started Reading a lot in 2020.
+1    The 40-year-old-woman is somewhere between the the woman that loves Soft drink and the 35-year-old woman, in that order.
+0    The Architect is exactly to the left of the woman that started Woodworking.
+0    Angela is next to the woman wearing the Blue mask.
+0    Holly is exactly to the right of the oldest woman.
+0    The Brit does not lives in the Red house.
+0    The Swede doesn't keeps Dogs as pets.
+0    The Dane does not drinks Tea.
+0    The Green house is exactly to the left of the White house.
+0    The owner of the Green does not house drinks Coffee.
+0    The owner of the Yellow house doesn't smokes Dunhill.
+0    The man living in the centre house does not drinks Milk.
+0    The Norwegian lives next to first house.
+0    The man who smokes Blends lives next to the one who keeps Cats.
+0    The man who keeps Horses lives next to the man who smokes Dunhill.
+0    The man who smokes Blue Master doesn't drinks Beer.
+0    The German does not smokes Prince.
+0    The Norwegian does not live Blue house.
+0    The man who smokes Blends has a neighbour who drinks Water.
+0    The 30-year-old DJ is not in the first position.  
+0    Dane is not at the fourth chair.  
+1    The person in the blue house owns a dog.
+0    Randy does not live in the red house.
+0    Dane does not live in a house.

@@ -17,6 +17,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import opennlp.tools.cmdline.parser.ParserTool;
+import opennlp.tools.doccat.DoccatModel;
+import opennlp.tools.doccat.DocumentCategorizer;
+import opennlp.tools.doccat.DocumentCategorizerME;
 import opennlp.tools.parser.Parse;
 import opennlp.tools.parser.Parser;
 import opennlp.tools.parser.ParserFactory;
@@ -108,5 +111,20 @@ public class OpenNlp {
 		System.out.println(allData);
 		System.out.println(allData.get("Pet")[1]);
 		return allData;
+	}
+	
+	@Test
+	public void association() throws Exception{
+		DoccatModel model =new DoccatModel(new File("src/resources/models/AssociationModel.bin"));
+		DocumentCategorizer doccat = new DocumentCategorizerME(model);
+		Scanner scanner = new Scanner(new File ("src/resources/examples/PuzzleClues.txt"));
+		while(scanner.hasNextLine()) {
+			String line = scanner.nextLine();
+			String[] docWords = line.replaceAll("[^A-Za-z]", " ").split(" ");
+			double[] aProbs = doccat.categorize(docWords);
+			System.out.println(line);
+			String category = doccat.getBestCategory(aProbs);
+			System.out.println(category);
+		}
 	}
 }
