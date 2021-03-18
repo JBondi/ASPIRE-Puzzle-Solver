@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -12,21 +13,42 @@ import java.util.Map;
 import java.util.Scanner;
 
 import opennlp.tools.cmdline.parser.ParserTool;
+import opennlp.tools.doccat.DoccatModel;
+import opennlp.tools.doccat.DocumentCategorizer;
+import opennlp.tools.doccat.DocumentCategorizerME;
 import opennlp.tools.parser.Parse;
 import opennlp.tools.parser.Parser;
 import opennlp.tools.parser.ParserFactory;
 import opennlp.tools.parser.ParserModel;
+import opennlp.tools.tokenize.Tokenizer;
+import opennlp.tools.tokenize.TokenizerME;
+import opennlp.tools.tokenize.TokenizerModel;
 
 public class PuzzleSolver {
 	
 	private Map<String, String[]> puzzleData;
 	private List<String> puzzleClues;
 	private Parser parser;
+	private DocumentCategorizer doccat;
+	private Tokenizer token;
 	
 	public PuzzleSolver() throws Exception{
 		this.puzzleClues= new ArrayList<>();
 		ParserModel model= new ParserModel(new File("src/resources/models/en-parser-chunking.bin"));
 		this.parser = ParserFactory.create(model);
+		DoccatModel fun =new DoccatModel(new File("src/resources/models/AssociationModel.bin"));
+		this.doccat = new DocumentCategorizerME(fun);
+		InputStream inputStream = new FileInputStream("en-token.bin");
+		TokenizerModel model1 = new TokenizerModel(inputStream);
+		this.token = new TokenizerME(model1);
+	}
+	
+	public boolean association(String Ella) throws Exception{
+			String[] docWords = token.tokenize(Ella);
+			double[] aProbs = doccat.categorize(docWords);
+			String category = doccat.getBestCategory(aProbs);
+			int categoryNum = Integer.parseInt(category);
+			return categoryNum == 1;
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -70,7 +92,12 @@ public class PuzzleSolver {
 	
 	public void addClue(String sentence) throws Exception{
 		puzzleClues.add(sentence);
-		parser(sentence, puzzleData);
+		List<String> puzzleNouns = parser(sentence, puzzleData);
+		boolean associationResults= association(sentence);
+		if (!associationResults) {
+			System.out.print("Not ");
+		}
+		System.out.println(puzzleNouns);
 	}
 	
 	private List<String> parser(String sentence, Map<String, String[]> allData) throws Exception{
