@@ -24,6 +24,11 @@ import opennlp.tools.tokenize.Tokenizer;
 import opennlp.tools.tokenize.TokenizerME;
 import opennlp.tools.tokenize.TokenizerModel;
 
+/**
+ * This is a tool for solving logic puzzles
+ * @author Ella Matz
+ *
+ */
 public class PuzzleSolver {
 	
 	private Map<String, String[]> puzzleData;
@@ -32,6 +37,10 @@ public class PuzzleSolver {
 	private DocumentCategorizer doccat;
 	private Tokenizer token;
 	
+	/**
+	 * Default constructor 
+	 * @throws Exception when there is an error reading the model files
+	 */
 	public PuzzleSolver() throws Exception{
 		this.puzzleClues= new ArrayList<>();
 		ParserModel model= new ParserModel(new File("src/resources/models/en-parser-chunking.bin"));
@@ -43,6 +52,13 @@ public class PuzzleSolver {
 		this.token = new TokenizerME(model1);
 	}
 	
+	/**
+	 * Determines if a sentence implies a relationship between two nouns/adjectives 
+	 * ex. I own a pillow vs. I don't have blonde hair
+	 * @param Ella -Sentence Test
+	 * @return True if a positive association
+	 * @throws Exception with the document categorizer 
+	 */
 	public boolean association(String Ella) throws Exception{
 			String[] docWords = token.tokenize(Ella);
 			double[] aProbs = doccat.categorize(docWords);
@@ -50,11 +66,16 @@ public class PuzzleSolver {
 			int categoryNum = Integer.parseInt(category);
 			return categoryNum == 1;
 	}
-
+	
+	/**
+	 * Main Method
+	 * @param args
+	 * @throws Exception 
+	 */
 	public static void main(String[] args) throws Exception {
 		PuzzleSolver solver = new PuzzleSolver();
-		solver.readPuzzleDataFromFile("src/resources/examples/PuzzleData.txt");
-		solver.readPuzzleCluesFromFile("src/resources/examples/PuzzleClues.txt");
+		solver.readPuzzleDataFromFile(args[0]);
+		solver.readPuzzleCluesFromFile(args[1]);
 
 	}
 	
@@ -68,6 +89,7 @@ public class PuzzleSolver {
 		return puzzleClues;
 	}
 	
+	//Splits the lines 
 	public Map<String, String[]> readPuzzleDataFromFile(String fileName) throws IOException {
 		FileInputStream stream = new FileInputStream(fileName);
 		Scanner scanner = new java.util.Scanner(stream);
@@ -90,6 +112,7 @@ public class PuzzleSolver {
 		this.puzzleData= puzzleData;
 	}
 	
+	//Figures out positive and negative connotation 
 	public void addClue(String sentence) throws Exception{
 		puzzleClues.add(sentence);
 		List<String> puzzleNouns = parser(sentence, puzzleData);
@@ -100,6 +123,7 @@ public class PuzzleSolver {
 		System.out.println(puzzleNouns);
 	}
 	
+	//method that parses each of the clues
 	private List<String> parser(String sentence, Map<String, String[]> allData) throws Exception{
 		List<String> puzzleNouns= new ArrayList<>();
 		Parse[] parsedSentence = ParserTool.parseLine(sentence, parser, 1);
@@ -118,6 +142,7 @@ public class PuzzleSolver {
 		return puzzleNouns;
 	}
 
+	//gives each the clue words a part of speech
 	private List<String> parseChild(Parse child) {
 		List<String> list = new ArrayList<>();
 		if(child.getChildCount() > 0 

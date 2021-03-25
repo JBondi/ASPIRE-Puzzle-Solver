@@ -26,6 +26,7 @@ public class AssociationTrainer {
 		ObjectStream lineStream = new PlainTextByLineStream(dataIn, "UTF-8");
 		ObjectStream sampleStream = new DocumentSampleStream(lineStream);
 		TrainingParameters params = new TrainingParameters();
+		//parameters for the association data
 		params.put(TrainingParameters.ITERATIONS_PARAM, "100");
 		params.put(TrainingParameters.CUTOFF_PARAM, "2");
 		params.put(AbstractTrainer.ALGORITHM_PARAM, PerceptronTrainer.PERCEPTRON_VALUE);
