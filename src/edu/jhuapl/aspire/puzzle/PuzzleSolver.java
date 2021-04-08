@@ -79,6 +79,12 @@ public class PuzzleSolver {
 
 	}
 	
+	/**
+	 * 
+	 * @param fileName
+	 * @return
+	 * @throws Exception
+	 */
 	public List<String> readPuzzleCluesFromFile(String fileName) throws Exception{
 		FileInputStream stream = new FileInputStream(fileName);
 		Scanner scanner = new java.util.Scanner(stream);
@@ -112,7 +118,11 @@ public class PuzzleSolver {
 		this.puzzleData= puzzleData;
 	}
 	
-	//Figures out positive and negative connotation 
+	/**
+	 * Figures out positive and negative connotation 
+	 * @param sentence
+	 * @throws Exception
+	 */
 	public void addClue(String sentence) throws Exception{
 		puzzleClues.add(sentence);
 		List<String> puzzleNouns = parser(sentence, puzzleData);
@@ -123,7 +133,13 @@ public class PuzzleSolver {
 		System.out.println(puzzleNouns);
 	}
 	
-	//method that parses each of the clues
+	/**
+	 * method that parses each of the clues
+	 * @param sentence
+	 * @param allData
+	 * @return
+	 * @throws Exception
+	 */
 	private List<String> parser(String sentence, Map<String, String[]> allData) throws Exception{
 		List<String> puzzleNouns= new ArrayList<>();
 		Parse[] parsedSentence = ParserTool.parseLine(sentence, parser, 1);
@@ -142,7 +158,11 @@ public class PuzzleSolver {
 		return puzzleNouns;
 	}
 
-	//gives each the clue words a part of speech
+	/**
+	 * gives each the clue words a part of speech
+	 * @param child
+	 * @return
+	 */
 	private List<String> parseChild(Parse child) {
 		List<String> list = new ArrayList<>();
 		if(child.getChildCount() > 0 
