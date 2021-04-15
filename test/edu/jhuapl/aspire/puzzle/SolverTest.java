@@ -65,6 +65,21 @@ class SolverTest {
 				variables.put(nameName, var);
 			}
 		}
+		
+		//making sure that ex hannah does not equal wolfgang
+		for(Map.Entry<String, String[]> z : puzzleClues.entrySet()){
+			String[] zValue = z.getValue();
+			for (int i=0; i< zValue.length; i++) {
+				for(int j=0; j< zValue.length; j++) {
+					if(i != j) {
+						variables.get(zValue[i]).ne(variables.get(zValue[j])).post();
+					}
+				}
+			}
+		}
+		
+		 //variables.get("Hannah").ne(variables.get("Wolfgang"));
+		
 		//now adding clues
 		variables.get("Hannah").eq(variables.get("Red")).post();
 		variables.get("Dog").ne(variables.get("Black")).post();
