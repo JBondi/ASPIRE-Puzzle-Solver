@@ -36,6 +36,7 @@ public class PuzzleSolver {
 	private Parser parser;
 	private DocumentCategorizer doccat;
 	private Tokenizer token;
+	private LogicSolver solver;
 	
 	/**
 	 * Default constructor 
@@ -76,6 +77,7 @@ public class PuzzleSolver {
 		PuzzleSolver solver = new PuzzleSolver();
 		solver.readPuzzleDataFromFile(args[0]);
 		solver.readPuzzleCluesFromFile(args[1]);
+		solver.solver.solvePuzzle();
 
 	}
 	
@@ -106,11 +108,12 @@ public class PuzzleSolver {
 			String[] dataPoints1 = splitLine[1].split(",");
 			String[] dataPoints2= new String[dataPoints1.length];
 			for (int i= 0; i< dataPoints2.length; i++) {
-				dataPoints2[i]= dataPoints1[i].trim();
+				dataPoints2[i]= dataPoints1[i].trim().toUpperCase();
 			}
 			allData.put(splitLine[0], dataPoints2);
 		}//end of while loop
 		this.puzzleData = allData;
+		this.solver = new LogicSolver(puzzleData);
 		return allData;
 	}
 	
@@ -130,6 +133,7 @@ public class PuzzleSolver {
 		if (!associationResults) {
 			System.out.print("Not ");
 		}
+		solver.addAssociations(puzzleNouns.get(0).toUpperCase(), puzzleNouns.get(1).toUpperCase(), associationResults);
 		System.out.println(puzzleNouns);
 	}
 	
