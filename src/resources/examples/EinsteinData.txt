@@ -1,0 +1,5 @@
+Color: Blue,Green,Red,White,Yellow
+Nationality: Brit,Dane,Norwegian,Swede,German
+Drink: Beer,Coffee,Milk,Tea,Water
+Cigarette: Blends,BlueMaster,Dunhill,PallMall,Prince
+Pet: Birds,Cats,Dogs,Horses,Fish

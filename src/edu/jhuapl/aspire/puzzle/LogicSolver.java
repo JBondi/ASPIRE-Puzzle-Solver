@@ -56,15 +56,22 @@ public class LogicSolver {
 		solution.record();
 		
 		Map<Integer, List<String>> solutionMap = new HashMap<>();
-		for(int i=1; i<= 4; i++) {
+		for(int i=1; i<= puzzleData.keySet().size(); i++) {
 			solutionMap.put(i, new ArrayList<>());
 		}
 		for(String VarName: puzzleData.keySet()) {
+			System.out.printf("%-20s", VarName);
 			for(String nameName: puzzleData.get(VarName)) {
 				int solutionInt = solution.getIntVal(variables.get(nameName));
 				solutionMap.get(solutionInt).add(nameName);
 			}
 		}
-		System.out.println(solutionMap);
+		System.out.println();
+		for(Map.Entry<Integer, List<String>> entry: solutionMap.entrySet()) {
+			for(String value : entry.getValue()) {
+				System.out.printf("%-20s", value);
+			}
+			System.out.println();
+		}
 	}
 }

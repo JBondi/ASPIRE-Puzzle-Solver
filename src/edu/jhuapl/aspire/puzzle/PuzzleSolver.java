@@ -133,8 +133,12 @@ public class PuzzleSolver {
 		if (!associationResults) {
 			System.out.print("Not ");
 		}
-		solver.addAssociations(puzzleNouns.get(0).toUpperCase(), puzzleNouns.get(1).toUpperCase(), associationResults);
 		System.out.println(puzzleNouns);
+		if(puzzleNouns.size()>=2)
+			solver.addAssociations(puzzleNouns.get(0).toUpperCase(), puzzleNouns.get(1).toUpperCase(), associationResults);
+		else {
+			System.out.printf("Unable to get relationship from sentence: \"%s\"\nGot %s\n",sentence, puzzleNouns.toString());
+		}
 	}
 	
 	/**
@@ -146,8 +150,10 @@ public class PuzzleSolver {
 	 */
 	private List<String> parser(String sentence, Map<String, String[]> allData) throws Exception{
 		List<String> puzzleNouns= new ArrayList<>();
+		sentence = sentence.replaceAll("[^A-Za-z ]", "");
 		Parse[] parsedSentence = ParserTool.parseLine(sentence, parser, 1);
 		Parse parse = parsedSentence[0];
+		//parser.parse(parse).showCodeTree();
 		List<String> nounInSentence = parseChild(parse);
 		for(String key : allData.keySet()) {
 			String[] values = allData.get(key);
@@ -172,9 +178,13 @@ public class PuzzleSolver {
 		if(child.getChildCount() > 0 
 				&&
 				child.getChildren()[0].getType().equals("TK")) {
-			if(child.getChildCount() > 0 && (child.getType().equals("NNP"))||
+			if(child.getChildCount() > 0 && (
+					child.getType().equals("NNP")||
+					child.getType().equals("NNPS")||
+					child.getType().equals("NNS")||
 					child.getType().equals("NN")|| 
-					child.getType().equals("JJ"))
+					child.getType().equals(".")|| 
+					child.getType().equals("JJ")))
 				list.add(child.getCoveredText());
 		}
 		for(Parse newChild : child.getChildren())
