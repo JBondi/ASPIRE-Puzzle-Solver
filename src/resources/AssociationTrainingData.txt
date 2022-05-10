@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 1    The Norwegian lives in the Blue house.
 0    The Spanish lives directly to the right of the Red house.
 0    The Italian does not lives in house two.
